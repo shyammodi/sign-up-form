@@ -3,6 +3,8 @@
 body {
     display: flex;
     flex-direction: row;
+    min-width: 1200px;
+    min-height: 600px;
 }
 
 #left {
@@ -42,7 +44,7 @@ img {
 #odin-text {
     color: white;
     font-family: "Norse Bold", sans-serif;
-    font-size: calc(min(16vh, 12vw));
+    font-size: calc(max(min(16vh, 12vw),144px));
 }
 
 #top, #bottom {
@@ -51,19 +53,48 @@ img {
 }
 
 #top, #middle, #bottom {
-    flex: 1;
     padding-left: 30px;
+}
+
+#top {
+    flex: 1
+}
+
+#bottom {
+    flex-grow: 1;
+    padding-top: 20px;
+}
+
+#bottom-two-thirds {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+#forminputs {
+    display: flex;
+    flex-direction: row;
 }
 
 form {
     display: flex;
-    flex-direction: row wrap;
+    flex-direction: column;
 }
 
 p {
     font-family: sans-serif;
     font-weight: bold;
     font-size: x-large;
+}
+
+#bottom p, #bottom a {
+    font-weight: normal;
+    font-size: large;
+}
+
+#bottom a {
+    text-decoration: none;
+    font-weight: bold;
 }
 
 #toptext {
@@ -90,3 +121,33 @@ label {
     font-size: small;
     font-weight: bold;
 }
+
+/* thank you chatgpt for making it pretty */
+button { 
+    background-color: #596D48; /* Blue background */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding inside the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor style on hover */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold font weight */
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc; /* Default border color */
+    border-radius: 5px;
+    outline: none; /* Remove default focus outline */
+  }
+  
+  /* Style for invalid input */
+  input:invalid {
+    border-color: #dc3545; /* Red border color */
+  }
+  
+  /* Style for focused input */
+  input:focus {
+    border-color: #007bff; /* Blue border color */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Blue shadow when focused */
+  }
